@@ -1,0 +1,280 @@
+type CapitalInfo {
+  latlng: [Float]
+}
+
+type Car {
+  side: String
+  signs: [String]
+}
+
+type CoatOfArms {
+  png: String
+  svg: String
+}
+
+type EUR {
+  name: String
+  symbol: String
+}
+
+type Currencies {
+  EUR: EUR
+}
+
+type Eng {
+  f: String
+  m: String
+}
+
+type Fra {
+  f: String
+  m: String
+}
+
+type Demonyms {
+  eng: Eng
+  fra: Fra
+}
+
+type Flags {
+  alt: String
+  png: String
+  svg: String
+}
+
+type Idd {
+  root: String
+  suffixes: [String]
+}
+
+type Languages {
+  slv: String
+}
+
+type Maps {
+  googleMaps: String
+  openStreetMaps: String
+}
+
+type Slv {
+  common: String
+  official: String
+}
+
+type NativeName {
+  slv: Slv
+}
+
+type Name {
+  common: String
+  nativeName: NativeName
+  official: String
+}
+
+type PostalCode {
+  format: String
+  regex: String
+}
+
+type Ara {
+  common: String
+  official: String
+}
+
+type Bre {
+  common: String
+  official: String
+}
+
+type Ces {
+  common: String
+  official: String
+}
+
+type Cym {
+  common: String
+  official: String
+}
+
+type Deu {
+  common: String
+  official: String
+}
+
+type Est {
+  common: String
+  official: String
+}
+
+type Fin {
+  common: String
+  official: String
+}
+
+type Fra3 {
+  common: String
+  official: String
+}
+
+type Hrv {
+  common: String
+  official: String
+}
+
+type Hun {
+  common: String
+  official: String
+}
+
+type Ita {
+  common: String
+  official: String
+}
+
+type Jpn {
+  common: String
+  official: String
+}
+
+type Kor {
+  common: String
+  official: String
+}
+
+type Nld {
+  common: String
+  official: String
+}
+
+type Per {
+  common: String
+  official: String
+}
+
+type Pol {
+  common: String
+  official: String
+}
+
+type Por {
+  common: String
+  official: String
+}
+
+type Rus {
+  common: String
+  official: String
+}
+
+type Slk {
+  common: String
+  official: String
+}
+
+type Spa {
+  common: String
+  official: String
+}
+
+type Srp {
+  common: String
+  official: String
+}
+
+type Swe {
+  common: String
+  official: String
+}
+
+type Tur {
+  common: String
+  official: String
+}
+
+type Urd {
+  common: String
+  official: String
+}
+
+type Zho {
+  common: String
+  official: String
+}
+
+type Translations {
+  ara: Ara
+  bre: Bre
+  ces: Ces
+  cym: Cym
+  deu: Deu
+  est: Est
+  fin: Fin
+  fra: Fra3
+  hrv: Hrv
+  hun: Hun
+  ita: Ita
+  jpn: Jpn
+  kor: Kor
+  nld: Nld
+  per: Per
+  pol: Pol
+  por: Por
+  rus: Rus
+  slk: Slk
+  spa: Spa
+  srp: Srp
+  swe: Swe
+  tur: Tur
+  urd: Urd
+  zho: Zho
+}
+
+type Country {
+  altSpellings: [String]
+  area: Float
+  borders: [String]
+  capital: [String]
+  capitalInfo: CapitalInfo
+  car: Car
+  cca2: String
+  cca3: String
+  ccn3: String
+  cioc: String
+  coatOfArms: CoatOfArms
+  continents: [String]
+  currencies: Currencies
+  demonyms: Demonyms
+  fifa: String
+  flag: String
+  flags: Flags
+  # gini: JSON
+  idd: Idd
+  independent: Boolean
+  landlocked: Boolean
+  languages: Languages
+  latlng: [Float]
+  maps: Maps
+  name: Name
+  population: Int
+  postalCode: PostalCode
+  region: String
+  startOfWeek: String
+  status: String
+  subregion: String
+  timezones: [String]
+  tld: [String]
+  translations: Translations
+  unMember: Boolean
+}
+
+
+type Query {
+  allCountries: [Country]
+  getCountriesByName(name: String!): [Country]
+  getCountriesByFullText(name: String!): [Country]
+  getCountriesByCode(code: String!): [Country]
+  getCountriesByCurrency(currency: String!): [Country]
+  getCountriesByLanguage(language: String!): [Country]
+  getCountriesByRegion(region: String!): [Country]
+  getCountriesBySubRegion(subRegion: String!): [Country]
+}
